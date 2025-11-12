@@ -3,7 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unicode Decoder</title>
+  <title>Unicode Decoder | Online Unicode Text Decoder Tool</title>
+
+  <!-- ✅ SEO Meta Tags -->
+  <meta name="description" content="Decode Unicode-encoded text instantly with this free online Unicode Decoder tool. Simple, fast, and accurate Unicode to text conversion." />
+  <meta name="keywords" content="Unicode decoder, online unicode tool, text decoder, unicode converter, unicode to text" />
+  <meta name="author" content="rootanvir" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- ✅ Open Graph (for sharing on social media) -->
+  <meta property="og:title" content="Unicode Decoder - Free Online Text Decoder Tool" />
+  <meta property="og:description" content="Decode any Unicode encoded text into readable format instantly. Simple, browser-based Unicode Decoder." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1170" />
+  <meta property="og:url" content="https://rootanvir.github.io/unicode_decoder/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- ✅ Google Search Console verification -->
+  <meta name="google-site-verification" content="google7a2ce9de7b3b91de.html" />
+
+  <!-- ✅ Schema.org for better Google recognition -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Unicode Decoder",
+    "url": "https://rootanvir.github.io/unicode_decoder/",
+    "description": "Decode Unicode-encoded text instantly with this free online Unicode Decoder tool.",
+    "applicationCategory": "Utility",
+    "creator": {
+      "@type": "Person",
+      "name": "rootanvir"
+    }
+  }
+  </script>
+
   <style>
     * { box-sizing: border-box; }
     body {
@@ -83,13 +116,12 @@
       font-size: 14px;
       opacity: 0;
       transition: opacity 0.4s ease-in-out;
-      max-height: 150px; /* ✅ Scroll when too long */
+      max-height: 150px;
       overflow-y: auto;
     }
     pre.show {
       opacity: 1;
     }
-    /* ✅ Custom scrollbar for dark theme */
     pre::-webkit-scrollbar {
       width: 6px;
     }
@@ -109,6 +141,18 @@
       margin-top: 6px;
       height: 16px;
     }
+    footer {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+    footer a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -118,6 +162,9 @@
     <button id="decode">Decode</button>
     <div id="error" class="error"></div>
     <pre id="output">Decoded text will appear here...</pre>
+    <footer>
+      <a href="https://github.com/rootanvir/unicode_decoder" target="_blank">GitHub</a>
+    </footer>
   </div>
 
   <script>
