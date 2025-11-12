@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Unicode Decoder | Online Unicode Text Decoder Tool</title>
+  <title>Unicode Encoder & Decoder | Rootanvir</title>
 
   <!-- ✅ SEO Meta Tags -->
   <meta name="description" content="Decode Unicode-encoded text instantly with this free online Unicode Decoder tool. Simple, fast, and accurate Unicode to text conversion." />
@@ -61,109 +61,36 @@
       text-align: center;
       transition: transform 0.3s ease;
     }
-    .container:hover {
-      transform: translateY(-3px);
-    }
-    h2 {
-      margin-top: 0;
-      margin-bottom: 18px;
-      font-size: 22px;
-      letter-spacing: 1px;
-      color: #93c5fd;
-      text-shadow: 0 0 8px rgba(59,130,246,0.4);
-    }
-    input {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #334155;
-      border-radius: 8px;
-      margin-bottom: 14px;
-      background: rgba(30,41,59,0.9);
-      color: #f8fafc;
-      font-size: 14px;
-      transition: border 0.2s, background 0.2s;
-    }
-    input:focus {
-      outline: none;
-      border-color: #3b82f6;
-      background: rgba(30,41,59,1);
-    }
-    button {
-      padding: 10px 24px;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(90deg, #2563eb, #3b82f6);
-      color: #fff;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
-      box-shadow: 0 0 10px rgba(37,99,235,0.3);
-    }
-    button:hover {
-      background: linear-gradient(90deg, #3b82f6, #60a5fa);
-      transform: translateY(-1px);
-    }
-    pre {
-      background: rgba(0,0,0,0.85);
-      color: #0ff;
-      padding: 12px;
-      border-radius: 8px;
-      text-align: left;
-      overflow-x: auto;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      margin-top: 14px;
-      font-size: 14px;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-      max-height: 150px;
-      overflow-y: auto;
-    }
-    pre.show {
-      opacity: 1;
-    }
-    pre::-webkit-scrollbar {
-      width: 6px;
-    }
-    pre::-webkit-scrollbar-thumb {
-      background: #3b82f6;
-      border-radius: 6px;
-    }
-    pre::-webkit-scrollbar-thumb:hover {
-      background: #60a5fa;
-    }
-    pre::-webkit-scrollbar-track {
-      background: rgba(255,255,255,0.05);
-    }
-    .error {
-      color: #f87171;
-      font-size: 13px;
-      margin-top: 6px;
-      height: 16px;
-    }
-    footer {
-      margin-top: 16px;
-      font-size: 12px;
-      color: #94a3b8;
-    }
-    footer a {
-      color: #60a5fa;
-      text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
-    }
+    .container:hover { transform: translateY(-3px); }
+    h2 { margin: 0 0 18px; font-size: 22px; letter-spacing: 1px; color: #93c5fd; text-shadow: 0 0 8px rgba(59,130,246,0.4); }
+    textarea { width: 100%; padding: 12px; border: 1px solid #334155; border-radius: 8px; margin-bottom: 14px; background: rgba(30,41,59,0.9); color: #f8fafc; font-size: 14px; transition: border 0.2s, background 0.2s; resize: vertical; }
+    textarea:focus { outline: none; border-color: #3b82f6; background: rgba(30,41,59,1); }
+    button { padding: 10px 24px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; transition: background 0.3s, transform 0.2s; box-shadow: 0 0 10px rgba(0,0,0,0.3); margin: 4px; color: #fff; }
+    button:hover { transform: translateY(-1px); }
+    #encode { background: linear-gradient(90deg, #ef4444, #f87171); box-shadow: 0 0 10px rgba(239,68,68,0.3); }
+    #encode:hover { background: linear-gradient(90deg, #f87171, #fca5a5); }
+    #decode { background: linear-gradient(90deg, #22c55e, #4ade80); box-shadow: 0 0 10px rgba(34,197,94,0.3); }
+    #decode:hover { background: linear-gradient(90deg, #4ade80, #86efac); }
+    pre { background: rgba(0,0,0,0.85); color: #0ff; padding: 12px; border-radius: 8px; text-align: left; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word; margin-top: 14px; font-size: 14px; opacity: 0; transition: opacity 0.4s ease-in-out; max-height: 150px; overflow-y: auto; }
+    pre.show { opacity: 1; }
+    .error { color: #f87171; font-size: 13px; margin-top: 6px; height: 16px; }
+    footer { margin-top: 16px; font-size: 12px; color: #94a3b8; }
+    footer a { color: #60a5fa; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <div class="container">
-    <h2>Unicode Decoder</h2>
-    <input id="input" placeholder="Enter encoded Unicode text..." />
-    <button id="decode">Decode</button>
+    <h2>Unicode Encoder & Decoder</h2>
+    <textarea id="input" placeholder="Enter text to encode or Unicode to decode..." rows="4"></textarea>
+    <div>
+      <button id="encode">Encode</button>
+      <button id="decode">Decode</button>
+    </div>
     <div id="error" class="error"></div>
-    <pre id="output">Decoded text will appear here...</pre>
+    <pre id="output">Result will appear here...</pre>
     <footer>
-      <a href="https://github.com/rootanvir/unicode_decoder" target="_blank">GitHub</a>
+      <a href="https://github.com/rootanvir/unicode_decoder" target="_blank">GitHub</a> © 2025
     </footer>
   </div>
 
@@ -172,20 +99,35 @@
     const outputEl = document.getElementById('output');
     const errorEl = document.getElementById('error');
 
-    document.getElementById('decode').addEventListener('click', () => {
-      const s = inputEl.value.trim();
-      if (!s) {
-        errorEl.textContent = "⚠️ Please enter some text to decode.";
-        outputEl.classList.remove('show');
-        return;
-      }
+    // ✅ Encode: convert normal text to "high byte + low byte" Unicode
+    document.getElementById('encode').addEventListener('click', () => {
+      const text = inputEl.value.trim();
+      if(!text) { errorEl.textContent = "⚠️ Please enter text to encode."; outputEl.classList.remove('show'); return; }
       errorEl.textContent = "";
-      let decode = '';
-      for (const flag of s) {
-        decode += String.fromCharCode(flag.charCodeAt(0) >> 8);
-        decode += String.fromCharCode(flag.charCodeAt(0) & 0xFF);
+      let unicode = '';
+      for(const char of text) {
+        const code = char.charCodeAt(0);
+        unicode += String.fromCharCode(code >> 8);     
+        unicode += String.fromCharCode(code & 0xFF);   
       }
-      outputEl.textContent = decode;
+      outputEl.textContent = unicode;
+      outputEl.classList.add('show');
+    });
+
+    // ✅ Decode: reverse "high byte + low byte" Unicode back to normal text
+    document.getElementById('decode').addEventListener('click', () => {
+      const flags = inputEl.value.trim();
+      if(!flags) { errorEl.textContent = "⚠️ Please enter Unicode to decode."; outputEl.classList.remove('show'); return; }
+      errorEl.textContent = "";
+      if(flags.length % 2 !== 0) { errorEl.textContent = "⚠️ Invalid input length."; outputEl.classList.remove('show'); return; }
+
+      let decoded = '';
+      for(let i=0; i<flags.length; i+=2) {
+        const high = flags.charCodeAt(i);
+        const low = flags.charCodeAt(i+1);
+        decoded += String.fromCharCode((high << 8) + low);
+      }
+      outputEl.textContent = decoded;
       outputEl.classList.add('show');
     });
   </script>
